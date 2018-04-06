@@ -222,13 +222,22 @@
                     <view key="view" contentMode="scaleToFill" id="yyf-YD-VOQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="uzB-SU-vXq">
+                                <rect key="frame" x="0.0" y="64" width="375" height="551"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="eIT-B9-Y3C"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="uzB-SU-vXq" id="psE-tR-d4y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tXA-Jm-Bzv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2564" y="-850"/>
+            <point key="canvasLocation" x="2564" y="-850.52473763118451"/>
         </scene>
     </scenes>
     <resources>
