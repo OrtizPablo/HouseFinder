@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,17 +36,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVf-XR-SQD">
-                                <rect key="frame" x="0.0" y="620" width="375" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVf-XR-SQD">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dVf-XR-SQD" secondAttribute="height" multiplier="15:2" id="Y1W-1U-dyj"/>
+                                </constraints>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SBV-rC-Mg5">
-                                <rect key="frame" x="0.0" y="64" width="375" height="548"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SBV-rC-Mg5">
+                                <rect key="frame" x="0.0" y="64" width="375" height="553"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HouseCell" id="ceK-xc-OB4">
@@ -55,8 +57,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HouseIcon" translatesAutoresizingMaskIntoConstraints="NO" id="uSr-tC-OUC">
+                                                    <rect key="frame" x="15" y="2" width="48" height="38"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="House" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Yb-ml-kIf">
-                                                    <rect key="frame" x="166" y="12" width="50" height="21"/>
+                                                    <rect key="frame" x="71" y="12" width="50" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -65,7 +71,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="K8U-7c-nep" kind="show" id="P3v-0k-L6w"/>
+                                            <segue destination="K8U-7c-nep" kind="show" id="N0d-HV-H81"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TransportationCell" id="2gy-xb-m5I">
@@ -75,8 +81,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TubeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="uiq-xj-eXV">
+                                                    <rect key="frame" x="15" y="2" width="48" height="38"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Transportation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iP-dY-x69">
-                                                    <rect key="frame" x="131" y="11" width="112" height="21"/>
+                                                    <rect key="frame" x="71" y="11" width="112" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -85,7 +95,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="KtO-dk-yUV" kind="show" id="53q-5c-lWu"/>
+                                            <segue destination="KtO-dk-yUV" kind="show" id="fAY-8b-ek2"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SupermarketCell" id="CbU-nF-vZQ">
@@ -95,8 +105,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SupermarketIcon" translatesAutoresizingMaskIntoConstraints="NO" id="rnO-9Z-9su">
+                                                    <rect key="frame" x="15" y="2" width="48" height="38"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Supermarket" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0R0-fB-ZlG">
-                                                    <rect key="frame" x="138" y="11" width="99" height="21"/>
+                                                    <rect key="frame" x="71" y="11" width="99" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -115,8 +129,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SummaryIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Jvl-Qg-X23">
+                                                    <rect key="frame" x="15" y="2" width="48" height="38"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Summary" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wl9-Bw-s37">
-                                                    <rect key="frame" x="151" y="11" width="73" height="21"/>
+                                                    <rect key="frame" x="71" y="11" width="73" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -132,6 +150,15 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SBV-rC-Mg5" firstAttribute="top" secondItem="gtW-6V-7EL" secondAttribute="top" id="0ns-P3-1Vc"/>
+                            <constraint firstItem="dVf-XR-SQD" firstAttribute="leading" secondItem="gtW-6V-7EL" secondAttribute="leading" id="Bre-AT-CBe"/>
+                            <constraint firstItem="dVf-XR-SQD" firstAttribute="trailing" secondItem="gtW-6V-7EL" secondAttribute="trailing" id="U5G-27-uVt"/>
+                            <constraint firstItem="dVf-XR-SQD" firstAttribute="top" secondItem="SBV-rC-Mg5" secondAttribute="bottom" id="VRk-tp-YPh"/>
+                            <constraint firstItem="dVf-XR-SQD" firstAttribute="bottom" secondItem="gtW-6V-7EL" secondAttribute="bottom" id="aMT-5X-kuR"/>
+                            <constraint firstItem="SBV-rC-Mg5" firstAttribute="leading" secondItem="gtW-6V-7EL" secondAttribute="leading" id="aaG-iz-t8H"/>
+                            <constraint firstItem="SBV-rC-Mg5" firstAttribute="trailing" secondItem="gtW-6V-7EL" secondAttribute="trailing" id="sII-LB-5QR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gtW-6V-7EL"/>
                     </view>
                     <navigationItem key="navigationItem" title="HouseFinder" id="Ck4-lH-b2J"/>
@@ -188,7 +215,7 @@
             </objects>
             <point key="canvasLocation" x="2564" y="1343"/>
         </scene>
-        <!--House-->
+        <!--House View Controller-->
         <scene sceneID="1c4-pO-A8o">
             <objects>
                 <viewController id="K8U-7c-nep" customClass="HouseViewController" customModule="HouseFinder" customModuleProvider="target" sceneMemberID="viewController">
@@ -198,11 +225,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="eIT-B9-Y3C"/>
                     </view>
-                    <navigationItem key="navigationItem" title="House" id="qxu-EY-MO5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tXA-Jm-Bzv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2564" y="-850"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="HouseIcon" width="512" height="512"/>
+        <image name="SummaryIcon" width="112" height="112"/>
+        <image name="SupermarketIcon" width="256" height="256"/>
+        <image name="TubeIcon" width="1000" height="808"/>
+    </resources>
 </document>
