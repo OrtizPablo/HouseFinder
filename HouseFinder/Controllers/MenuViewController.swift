@@ -14,6 +14,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var tableView: UITableView!
     let cells = ["HouseCell", "TransportationCell", "SupermarketCell", "SummaryCell"]
+    var house = House()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,11 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cells.count
     }
+    
+    // Deselect row selected
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 
     // Depending on the number of the row the function returns a different kind of cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -55,5 +61,21 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     // MARK: Actions
+    @IBAction func addHouseUnwindSegue(_ sender: UIStoryboardSegue){
+        // Getting the properties of the house
+        if let senderVC = sender.source as? HouseViewController {
+            self.house = senderVC.house
+            print("house: \(house.name)-\(house.roomsNumber)-\(house.bathsNumber)-\(house.rating)-\(house.latitude)-\(house.longitude)")
+        }
+    }
+    
+    @IBAction func addStationUnwindSegue(_ sender: UIStoryboardSegue){
+        // Getting the properties of the transportation
+        if let senderVC = sender.source as? TransportationViewController {
+            //self. = senderVC.
+            print("test")
+        }
+    }
+    
     // Function that adds a property to the property list
 }

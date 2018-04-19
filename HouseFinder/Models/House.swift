@@ -31,4 +31,13 @@ class House {
         self.longitude = longitude
     }
     
+    init(){
+        self.name = ""
+        self.roomsNumber = 0
+        self.bathsNumber = 0
+        self.rating = 0
+        self.latitude = 0
+        self.longitude = 0
+    }
+    
 }
