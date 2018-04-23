@@ -13,6 +13,7 @@ class TransportationViewController: UIViewController, UIPickerViewDelegate, UIPi
     //MARK: Properties
     
     //Transportation
+    var userStops: [Transportation] = []
     let tubeLines = ["Bakerloo", "Central", "Circle", "District", "Hammersmith & City", "Jubilee", "Metropolitan", "Nothern", "Piccadilly", "Victoria", "Waterloo & City"/*, "London Overground", "Tfl Rail", "DLR", "Tram"*/]
     let tubeColors = [UIColor(red: 203/255, green: 107/255, blue: 84/255, alpha: 1),
                       UIColor(red: 218/255, green: 79/255, blue: 79/255, alpha: 1),
@@ -52,7 +53,10 @@ class TransportationViewController: UIViewController, UIPickerViewDelegate, UIPi
     
     @IBOutlet weak var tubePickerView: UIPickerView!
     @IBOutlet weak var stopsTableView: UITableView!
-    @IBOutlet weak var tubeStopLabel: UILabel!
+    
+    //Pop Up
+    @IBOutlet weak var popUpView: UIView!
+    @IBOutlet weak var popUpLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +66,10 @@ class TransportationViewController: UIViewController, UIPickerViewDelegate, UIPi
         //TableView
         stopsTableView.delegate = self
         stopsTableView.dataSource = self
+        //Pop Up
+        self.popUpView.isHidden = true
+        //Navigation Bar
+        navigationItem.title = "Transportation"
     }
 
     override func didReceiveMemoryWarning() {
@@ -102,7 +110,6 @@ class TransportationViewController: UIViewController, UIPickerViewDelegate, UIPi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tubeStopCell", for: indexPath) as! TransportationTableViewCell
-        //cell.textLabel?.backgroundColor = tubeColors[tubePickerView.selectedRow(inComponent: 0)]
         cell.tubeLabel.text = tubeStops[tubePickerView.selectedRow(inComponent: 0)][indexPath.row]
         return cell
     }
@@ -111,8 +118,9 @@ class TransportationViewController: UIViewController, UIPickerViewDelegate, UIPi
         self.stopsTableView.deselectRow(at: indexPath, animated: true)
         let cell = stopsTableView.cellForRow(at: indexPath) as! TransportationTableViewCell
         if let stop = cell.tubeLabel.text {
-            tubeStopLabel.backgroundColor = tubeColors[tubePickerView.selectedRow(inComponent: 0)]
-            tubeStopLabel.text = stop
+            if addStation(line: tubeLines[tubePickerView.selectedRow(inComponent: 0)], stop: stop) {
+                activateTimer(message: stop, color: tubeColors[tubePickerView.selectedRow(inComponent: 0)])
+            }
         }
     }
     
@@ -120,13 +128,35 @@ class TransportationViewController: UIViewController, UIPickerViewDelegate, UIPi
     
     //Action performed when the user press the button: Add Station
     @IBAction func addStation(_ sender: UIButton) {
-        if tubeStopLabel.text! != "" {
-            self.performSegue(withIdentifier: "addStationUnwindSegue", sender: self)
-        }
-        else {
-            Helper().showOkAlertView(self, title: "Error", message: "You need to add a station")
-        }
+        self.performSegue(withIdentifier: "addStationUnwindSegue", sender: self)
     }
     
-
+    //Action that hides the popUpView
+    @IBAction func showPopUp(){
+        self.popUpView.isHidden = true
+    }
+    
+    //MARK: Functions
+    
+    //Function that activates the popUpView
+    func activateTimer(message: String, color: UIColor){
+        self.popUpView.backgroundColor = color
+        self.popUpView.isHidden = false
+        self.popUpLabel.text = message + " was added"
+        _ = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.showPopUp), userInfo: nil, repeats: false)
+    }
+    
+    //Function that add a station
+    func addStation(line: String, stop: String) -> Bool {
+        for transportation in userStops {
+            // If the stop was added
+            if transportation.stop == stop {
+                self.showOkAlertView("Error", message: "Stop " + stop + " was added")
+                return false
+            }
+        }
+        userStops.append(Transportation(line: line, stop: stop))
+        return true
+    }
+    
 }

@@ -126,7 +126,7 @@ class HouseMapViewController: UIViewController, MKMapViewDelegate {
     @IBAction func addLocation(_ sender: UIButton) {
         // If there is no annotation
         if mapView.annotations.count == 0 {
-            Helper().showOkAlertView(self, title: "Error", message: "You need to add an annotation")
+            self.showOkAlertView("Error", message: "You need to add an annotation")
         }
         // If there is annotation we call the unwind segue
         else {

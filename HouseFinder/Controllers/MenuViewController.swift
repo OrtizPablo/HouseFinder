@@ -13,8 +13,12 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: Properties
     
     @IBOutlet weak var tableView: UITableView!
+    
     let cells = ["HouseCell", "TransportationCell", "SupermarketCell", "SummaryCell"]
+
     var house = House()
+    var userStops: [Transportation] = []
+    var supermarkets: [Supermarket] = [Supermarket(name: "Tesco", check: false), Supermarket(name: "Sainsbury's", check: false), Supermarket(name: "Aldi", check: false), Supermarket(name: "Asda", check: false), Supermarket(name: "Lidl", check: false), Supermarket(name: "Waitrose", check: false), Supermarket(name: "Others", check: false)]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +45,21 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // Deselect row selected
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.row == 0 && (tableView.cellForRow(at: indexPath)?.isSelected)! {
+            self.performSegue(withIdentifier: "HouseSegue", sender: nil)
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+        else if indexPath.row == 1 && (tableView.cellForRow(at: indexPath)?.isSelected)! {
+            self.performSegue(withIdentifier: "TransportationSegue", sender: nil)
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+        else if indexPath.row == 2 && (tableView.cellForRow(at: indexPath)?.isSelected)! {
+            self.performSegue(withIdentifier: "SupermarketSegue", sender: nil)
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+        else {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
     }
 
     // Depending on the number of the row the function returns a different kind of cell
@@ -61,19 +79,47 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     // MARK: Actions
+    
     @IBAction func addHouseUnwindSegue(_ sender: UIStoryboardSegue){
         // Getting the properties of the house
         if let senderVC = sender.source as? HouseViewController {
             self.house = senderVC.house
-            print("house: \(house.name)-\(house.roomsNumber)-\(house.bathsNumber)-\(house.rating)-\(house.latitude)-\(house.longitude)")
+            
+            //print("house: \(house.name)-\(house.roomsNumber)-\(house.bathsNumber)-\(house.rating)-\(house.latitude)-\(house.longitude)")
         }
     }
     
     @IBAction func addStationUnwindSegue(_ sender: UIStoryboardSegue){
         // Getting the properties of the transportation
         if let senderVC = sender.source as? TransportationViewController {
-            //self. = senderVC.
-            print("test")
+            self.userStops = senderVC.userStops
+        }
+    }
+    
+    @IBAction func addSupermarketUnwindSegue(_ sender: UIStoryboardSegue){
+        if let senderVC = sender.source as? SupermarketViewController {
+            self.supermarkets = senderVC.supermarkets
+        }
+//        print("house: \(house.name)-\(house.roomsNumber)-\(house.bathsNumber)-\(house.rating)-\(house.latitude)-\(house.longitude)")
+//        for transportation in userStops {
+//            print("Transportation: \(transportation.line) - \(transportation.stop)")
+//        }
+//        for supermarket in supermarkets {
+//            print("Supermarkets: \(supermarket.name) - \(supermarket.check)")
+//        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "HouseSegue" {
+            let houseViewController = segue.destination as! HouseViewController
+        }
+        else if segue.identifier == "TransportationSegue" {
+            let transportationViewController = segue.destination as! TransportationViewController
+            transportationViewController.userStops = self.userStops
+        }
+        else if segue.identifier == "SupermarketSegue" {
+            let supermarketViewController = segue.destination as! SupermarketViewController
+            supermarketViewController.supermarkets = self.supermarkets
         }
     }
     

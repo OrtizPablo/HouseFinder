@@ -106,11 +106,11 @@ class HouseViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 self.performSegue(withIdentifier: "addHouseUnwindSegue", sender: self)
             }
             else {
-                Helper().showOkAlertView(self, title: "Error", message: "You need to add a location for the house")
+                self.showOkAlertView("Error", message: "You need to add a location for the house")
             }
         }
         else {
-            Helper().showOkAlertView(self, title: "Error", message: "You need to add a name for the house")
+            self.showOkAlertView("Error", message: "You need to add a name for the house")
         }
     }
     

@@ -12,6 +12,8 @@ class SummaryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Navigation Bar
+        navigationItem.title = "Summary"
     }
 
     override func didReceiveMemoryWarning() {
