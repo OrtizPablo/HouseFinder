@@ -14,6 +14,8 @@ class HouseMapViewController: UIViewController, MKMapViewDelegate {
     //MARK: Properties
     
     @IBOutlet weak var mapView: MKMapView!
+    var annotation = MKPointAnnotation()
+    var locationChecker = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,19 +28,19 @@ class HouseMapViewController: UIViewController, MKMapViewDelegate {
     
     //MARK: Functions
     
-    func addAnnotationTest(){
-        let span: MKCoordinateSpan = MKCoordinateSpanMake(0.1, 0.1)
-        let location: CLLocationCoordinate2D = CLLocationCoordinate2DMake(51.500765, -0.124616)
-        let region: MKCoordinateRegion = MKCoordinateRegionMake(location, span)
-        mapView.setRegion(region, animated: true)
-        
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = location
-        annotation.title = "Title"
-        annotation.subtitle = "Subtitle"
-        
-        mapView.addAnnotation(annotation)
-    }
+//    func addAnnotationTest(){
+//        let span: MKCoordinateSpan = MKCoordinateSpanMake(0.1, 0.1)
+//        let location: CLLocationCoordinate2D = CLLocationCoordinate2DMake(51.500765, -0.124616)
+//        let region: MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+//        mapView.setRegion(region, animated: true)
+//
+//        let annotation = MKPointAnnotation()
+//        annotation.coordinate = location
+//        annotation.title = "Title"
+//        annotation.subtitle = "Subtitle"
+//
+//        mapView.addAnnotation(annotation)
+//    }
     
     // Fuction that initializate the initial values of the view
     func initiateView(){
@@ -68,6 +70,12 @@ class HouseMapViewController: UIViewController, MKMapViewDelegate {
         doubleTapRecognizer.delaysTouchesBegan = true
         
         self.mapView.delegate = self
+        
+        // Checking if the annotation was introduced
+        if self.locationChecker {
+            self.mapView.addAnnotation(self.annotation)
+            self.mapView.selectAnnotation(self.annotation, animated: true)
+        }
     }
     
     //MARK: Actions
@@ -82,15 +90,14 @@ class HouseMapViewController: UIViewController, MKMapViewDelegate {
         //
         let location = recognizer.location(in: self.mapView)
         let tapLocation = self.mapView.convert(location, toCoordinateFrom: self.mapView)
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = tapLocation
+        self.annotation.coordinate = tapLocation
         
         let group = DispatchGroup()
         group.enter()
         
         DispatchQueue.main.async {
             // Getting the location of the annotation and adding it to the map
-            let cllocation = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
+            let cllocation = CLLocation(latitude: self.annotation.coordinate.latitude, longitude: self.annotation.coordinate.longitude)
             CLGeocoder().reverseGeocodeLocation(cllocation, completionHandler:{ (placemarks, error) -> Void in
                 if let error = error {
                     print("Unable to Reverse Geocode Location (\(error))")
@@ -99,9 +106,9 @@ class HouseMapViewController: UIViewController, MKMapViewDelegate {
                 } else {
                     if let placemarks = placemarks, let placemark = placemarks.first {
                         if let thoroughfare = placemark.thoroughfare{
-                            annotation.title = thoroughfare
+                            self.annotation.title = thoroughfare
                             if let subThoroughfare = placemark.subThoroughfare{
-                                annotation.title = annotation.title! + " " + subThoroughfare
+                                self.annotation.title = self.annotation.title! + " " + subThoroughfare
                             }
                         }
                     } else {
@@ -112,8 +119,8 @@ class HouseMapViewController: UIViewController, MKMapViewDelegate {
             group.leave()
         }
         group.notify(queue: .main) {
-            self.mapView.addAnnotation(annotation)
-            self.mapView.selectAnnotation(annotation, animated: true)
+            self.mapView.addAnnotation(self.annotation)
+            self.mapView.selectAnnotation(self.annotation, animated: true)
         }
     }
     

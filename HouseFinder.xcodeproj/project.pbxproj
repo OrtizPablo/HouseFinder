@@ -15,6 +15,9 @@
 		6E3393F1207FC3E4003951DA /* HouseRatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3393F0207FC3E4003951DA /* HouseRatingTableViewCell.swift */; };
 		6E4290AD2077EC7000DC2AF3 /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4290AC2077EC7000DC2AF3 /* House.swift */; };
 		6E49B52C208CAC5D009AFF46 /* Transportation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E49B52B208CAC5D009AFF46 /* Transportation.swift */; };
+		6E5653BE2090EABA0000DAA6 /* SummaryHouseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5653BD2090EABA0000DAA6 /* SummaryHouseTableViewCell.swift */; };
+		6E5653C02090EACB0000DAA6 /* SummaryTransportationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5653BF2090EACB0000DAA6 /* SummaryTransportationTableViewCell.swift */; };
+		6E5653C22090EAD90000DAA6 /* SummarySupermarketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5653C12090EAD90000DAA6 /* SummarySupermarketTableViewCell.swift */; };
 		6E5BA23C207D2E3400C99CA8 /* HouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5BA23B207D2E3400C99CA8 /* HouseViewController.swift */; };
 		6E6ED1A5208E5A310089AB0C /* SupermarketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ED1A4208E5A310089AB0C /* SupermarketTableViewCell.swift */; };
 		6E6ED1A7208E75990089AB0C /* Supermarket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ED1A6208E75990089AB0C /* Supermarket.swift */; };
@@ -52,6 +55,9 @@
 		6E3393F0207FC3E4003951DA /* HouseRatingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseRatingTableViewCell.swift; sourceTree = "<group>"; };
 		6E4290AC2077EC7000DC2AF3 /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 		6E49B52B208CAC5D009AFF46 /* Transportation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transportation.swift; sourceTree = "<group>"; };
+		6E5653BD2090EABA0000DAA6 /* SummaryHouseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryHouseTableViewCell.swift; sourceTree = "<group>"; };
+		6E5653BF2090EACB0000DAA6 /* SummaryTransportationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTransportationTableViewCell.swift; sourceTree = "<group>"; };
+		6E5653C12090EAD90000DAA6 /* SummarySupermarketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummarySupermarketTableViewCell.swift; sourceTree = "<group>"; };
 		6E5BA23B207D2E3400C99CA8 /* HouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseViewController.swift; sourceTree = "<group>"; };
 		6E6ED1A4208E5A310089AB0C /* SupermarketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupermarketTableViewCell.swift; sourceTree = "<group>"; };
 		6E6ED1A6208E75990089AB0C /* Supermarket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supermarket.swift; sourceTree = "<group>"; };
@@ -110,6 +116,16 @@
 				6E195B1E208923A700C07F9C /* TransportationTableViewCell.swift */,
 			);
 			path = Transportation;
+			sourceTree = "<group>";
+		};
+		6E5653BC2090EA760000DAA6 /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				6E5653BD2090EABA0000DAA6 /* SummaryHouseTableViewCell.swift */,
+				6E5653BF2090EACB0000DAA6 /* SummaryTransportationTableViewCell.swift */,
+				6E5653C12090EAD90000DAA6 /* SummarySupermarketTableViewCell.swift */,
+			);
+			path = Summary;
 			sourceTree = "<group>";
 		};
 		6E6ED1A3208E59F80089AB0C /* Supermarket */ = {
@@ -194,6 +210,7 @@
 				6E3393F2207FC406003951DA /* House */,
 				6E6ED1A3208E59F80089AB0C /* Supermarket */,
 				6E3393F3207FC42A003951DA /* Transportation */,
+				6E5653BC2090EA760000DAA6 /* Summary */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -315,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E5653C02090EACB0000DAA6 /* SummaryTransportationTableViewCell.swift in Sources */,
 				6E3393F1207FC3E4003951DA /* HouseRatingTableViewCell.swift in Sources */,
 				6E89180920754C2F007BE443 /* TransportationViewController.swift in Sources */,
 				6E89180820754C2F007BE443 /* SupermarketViewController.swift in Sources */,
@@ -328,9 +346,11 @@
 				6E89180B20754C4E007BE443 /* MenuViewController.swift in Sources */,
 				6E89180620754C2F007BE443 /* HouseMapViewController.swift in Sources */,
 				6EFE8837207E704A00BD725F /* Helper.swift in Sources */,
+				6E5653C22090EAD90000DAA6 /* SummarySupermarketTableViewCell.swift in Sources */,
 				6E3393EF207FC3AF003951DA /* HouseBathsTableViewCell.swift in Sources */,
 				6E3393E9207FBD7E003951DA /* HouseLocationTableViewCell.swift in Sources */,
 				6E3393ED207FC397003951DA /* HouseRoomsTableViewCell.swift in Sources */,
+				6E5653BE2090EABA0000DAA6 /* SummaryHouseTableViewCell.swift in Sources */,
 				6E6ED1A5208E5A310089AB0C /* SupermarketTableViewCell.swift in Sources */,
 				6E8917DC20754B99007BE443 /* AppDelegate.swift in Sources */,
 				6E89180720754C2F007BE443 /* SummaryViewController.swift in Sources */,

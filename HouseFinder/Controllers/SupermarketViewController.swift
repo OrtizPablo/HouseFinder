@@ -13,7 +13,7 @@ class SupermarketViewController: UIViewController, UITableViewDelegate, UITableV
     //MARK: Properties
     
     var supermarkets: [Supermarket] = []
-    let cellImages = ["tescoIcon", "sainsburysIcon", "aldiIcon", "asdaIcon", "lidlIcon", "waitroseIcon", "othersIcon"]
+    //let cellImages = ["tescoIcon", "sainsburysIcon", "aldiIcon", "asdaIcon", "lidlIcon", "waitroseIcon", "othersIcon"]
     @IBOutlet weak var supermarketTableView: UITableView!
     
     override func viewDidLoad() {
@@ -45,7 +45,7 @@ class SupermarketViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = supermarketTableView.dequeueReusableCell(withIdentifier: "SupermarketInfoCell", for: indexPath) as! SupermarketTableViewCell
-        cell.supermarketImageView.image = UIImage(named: cellImages[indexPath.row])
+        cell.supermarketImageView.image = supermarkets[indexPath.row].image
         cell.supermarketLabel.text = supermarkets[indexPath.row].name
         cell.supermarketSwitch.isOn = supermarkets[indexPath.row].check
         return cell
@@ -63,10 +63,11 @@ class SupermarketViewController: UIViewController, UITableViewDelegate, UITableV
         var cell: SupermarketTableViewCell
         var indexPath: IndexPath
         var markets: [Supermarket] = []
+        
         for index in 0..<supermarkets.count {
             indexPath = IndexPath(row: index, section: 0)
             cell = supermarketTableView.cellForRow(at: indexPath) as! SupermarketTableViewCell
-            markets.append(Supermarket(name: cell.supermarketLabel.text!, check: cell.supermarketSwitch.isOn))
+            markets.append(Supermarket(name: cell.supermarketLabel.text!, check: cell.supermarketSwitch.isOn, image: supermarkets[index].image))
         }
         self.supermarkets.removeAll()
         self.supermarkets = markets

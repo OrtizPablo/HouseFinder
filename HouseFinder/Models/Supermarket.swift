@@ -6,7 +6,7 @@
 //  Copyright © 2018 Pablo Ortiz Rodríguez. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Supermarket {
     
@@ -14,11 +14,14 @@ class Supermarket {
     
     var name: String
     var check: Bool
+    var image: UIImage?
     
     //MARK: Initialization
     
-    init(name: String, check: Bool){
+    init(name: String, check: Bool, image: UIImage?){
         self.name = name
         self.check = check
+        self.image = image
     }
+    
 }

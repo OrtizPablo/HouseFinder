@@ -9,12 +9,16 @@
 import UIKit
 
 class Helper {
-    
-    // Function that shows an alert view 
-    func showOkAlertView(_ viewController: UIViewController, title: String, message: String){
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        viewController.present(alert, animated: true)
+
+    // Function that returns all the supermarkets checked
+    func getSupermarketsChecked(supermarkets: [Supermarket]) -> [Supermarket]{
+        var array:[Supermarket] = []
+        for supermarket in supermarkets {
+            if supermarket.check {
+                array.append(supermarket)
+            }
+        }
+        return array
     }
     
 }

@@ -18,7 +18,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     var house = House()
     var userStops: [Transportation] = []
-    var supermarkets: [Supermarket] = [Supermarket(name: "Tesco", check: false), Supermarket(name: "Sainsbury's", check: false), Supermarket(name: "Aldi", check: false), Supermarket(name: "Asda", check: false), Supermarket(name: "Lidl", check: false), Supermarket(name: "Waitrose", check: false), Supermarket(name: "Others", check: false)]
+    var supermarkets: [Supermarket] = [Supermarket(name: "Tesco", check: false, image: UIImage(named: "tescoIcon")), Supermarket(name: "Sainsbury's", check: false, image: UIImage(named: "sainsburysIcon")), Supermarket(name: "Aldi", check: false, image: UIImage(named: "aldiIcon")), Supermarket(name: "Asda", check: false, image: UIImage(named: "asdaIcon")), Supermarket(name: "Lidl", check: false, image: UIImage(named: "lidlIcon")), Supermarket(name: "Waitrose", check: false, image: UIImage(named: "waitroseIcon")), Supermarket(name: "Others", check: false, image: UIImage(named: "othersIcon"))]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +57,10 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.performSegue(withIdentifier: "SupermarketSegue", sender: nil)
             tableView.deselectRow(at: indexPath, animated: true)
         }
+        else if indexPath.row == 3 && (tableView.cellForRow(at: indexPath)?.isSelected)! {
+            self.performSegue(withIdentifier: "SummarySegue", sender: nil)
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
         else {
             tableView.deselectRow(at: indexPath, animated: true)
         }
@@ -84,8 +88,6 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Getting the properties of the house
         if let senderVC = sender.source as? HouseViewController {
             self.house = senderVC.house
-            
-            //print("house: \(house.name)-\(house.roomsNumber)-\(house.bathsNumber)-\(house.rating)-\(house.latitude)-\(house.longitude)")
         }
     }
     
@@ -112,6 +114,8 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "HouseSegue" {
             let houseViewController = segue.destination as! HouseViewController
+            houseViewController.house = self.house
+            
         }
         else if segue.identifier == "TransportationSegue" {
             let transportationViewController = segue.destination as! TransportationViewController
@@ -120,6 +124,12 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         else if segue.identifier == "SupermarketSegue" {
             let supermarketViewController = segue.destination as! SupermarketViewController
             supermarketViewController.supermarkets = self.supermarkets
+        }
+        else if segue.identifier == "SummarySegue" {
+            let summaryViewController = segue.destination as! SummaryViewController
+            summaryViewController.house = self.house
+            summaryViewController.transportations = self.userStops
+            summaryViewController.supermarkets = self.supermarkets
         }
     }
     

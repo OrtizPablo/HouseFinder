@@ -17,16 +17,18 @@ class House {
     var roomsNumber: Int
     var bathsNumber: Int
     var rating: Int
+    var selected: Bool
     var latitude: CLLocationDegrees
     var longitude: CLLocationDegrees
     
     //MARK: Initialization
     
-    init(name: String, roomsNumber: Int, bathsNumber: Int, rating: Int, latitude: CLLocationDegrees, longitude: CLLocationDegrees){
+    init(name: String, roomsNumber: Int, bathsNumber: Int, rating: Int, selected: Bool, latitude: CLLocationDegrees, longitude: CLLocationDegrees){
         self.name = name
         self.roomsNumber = roomsNumber
         self.bathsNumber = bathsNumber
         self.rating = rating
+        self.selected = selected
         self.latitude = latitude
         self.longitude = longitude
     }
@@ -35,7 +37,8 @@ class House {
         self.name = ""
         self.roomsNumber = 0
         self.bathsNumber = 0
-        self.rating = 0
+        self.rating = 5
+        self.selected = false
         self.latitude = 0
         self.longitude = 0
     }

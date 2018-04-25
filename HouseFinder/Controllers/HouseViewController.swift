@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 import CoreLocation
 
 class HouseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -48,21 +49,32 @@ class HouseViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            return tableView.dequeueReusableCell(withIdentifier: cells[0], for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: cells[0], for: indexPath) as! HouseNameTableViewCell
+            cell.nameText.text = house.name
+            return cell
         }
         if indexPath.row == 1 {
-            return tableView.dequeueReusableCell(withIdentifier: cells[1], for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: cells[1], for: indexPath) as! HouseRoomsTableViewCell
+            cell.roomsLabel.text = String(house.roomsNumber)
+            cell.stepper.value = Double(house.roomsNumber)
+            return cell
         }
         if indexPath.row == 2 {
-            return tableView.dequeueReusableCell(withIdentifier: cells[2], for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: cells[2], for: indexPath) as! HouseBathsTableViewCell
+            cell.bathsLabel.text = String(house.bathsNumber)
+            cell.stepper.value = Double(house.bathsNumber)
+            return cell
         }
         if indexPath.row == 3 {
-            return tableView.dequeueReusableCell(withIdentifier: cells[3], for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: cells[3], for: indexPath) as! HouseRatingTableViewCell
+            cell.ratingLabel.text = String(house.rating)
+            cell.ratingSlider.value = Float(house.rating)
+            return cell
         }
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: cells[4], for: indexPath) as! HouseLocationTableViewCell
             // If the location has been inserted
-            if checkLocation {
+            if house.selected || checkLocation {
                 cell.checkLocation.image = UIImage(named: "TicIcon")
             }
             else {
@@ -74,6 +86,9 @@ class HouseViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     // Deselect row selected
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 4 && (self.tableView.cellForRow(at: indexPath)?.isSelected)! {
+            performSegue(withIdentifier: "MapSegue", sender: nil)
+        }
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -102,7 +117,7 @@ class HouseViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let baths = Int((tableView.dequeueReusableCell(withIdentifier: cells[2]) as! HouseBathsTableViewCell).bathsLabel.text!)!
             let rating = Int((tableView.dequeueReusableCell(withIdentifier: cells[3]) as! HouseRatingTableViewCell).ratingLabel.text!)!
             if checkLocation {
-                house = House(name: name, roomsNumber: rooms, bathsNumber: baths, rating: rating, latitude: self.latitude, longitude: self.longitude)
+                house = House(name: name, roomsNumber: rooms, bathsNumber: baths, rating: rating, selected: checkLocation, latitude: self.latitude, longitude: self.longitude)
                 self.performSegue(withIdentifier: "addHouseUnwindSegue", sender: self)
             }
             else {
@@ -114,5 +129,17 @@ class HouseViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
-    
+    // Passing data with the segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "MapSegue" {
+            let houseMapViewController = segue.destination as! HouseMapViewController
+            if house.selected || checkLocation {
+                houseMapViewController.locationChecker = true
+                let annotation = MKPointAnnotation()
+                annotation.coordinate.latitude = latitude
+                annotation.coordinate.longitude = longitude
+                houseMapViewController.annotation = annotation
+            }
+        }
+    }
 }
