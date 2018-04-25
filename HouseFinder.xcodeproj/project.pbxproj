@@ -13,6 +13,7 @@
 		6E3393ED207FC397003951DA /* HouseRoomsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3393EC207FC397003951DA /* HouseRoomsTableViewCell.swift */; };
 		6E3393EF207FC3AF003951DA /* HouseBathsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3393EE207FC3AF003951DA /* HouseBathsTableViewCell.swift */; };
 		6E3393F1207FC3E4003951DA /* HouseRatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3393F0207FC3E4003951DA /* HouseRatingTableViewCell.swift */; };
+		6E3D222C209120FC006986A6 /* PropertiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3D222B209120FC006986A6 /* PropertiesViewController.swift */; };
 		6E4290AD2077EC7000DC2AF3 /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4290AC2077EC7000DC2AF3 /* House.swift */; };
 		6E49B52C208CAC5D009AFF46 /* Transportation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E49B52B208CAC5D009AFF46 /* Transportation.swift */; };
 		6E5653BE2090EABA0000DAA6 /* SummaryHouseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5653BD2090EABA0000DAA6 /* SummaryHouseTableViewCell.swift */; };
@@ -53,6 +54,7 @@
 		6E3393EC207FC397003951DA /* HouseRoomsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseRoomsTableViewCell.swift; sourceTree = "<group>"; };
 		6E3393EE207FC3AF003951DA /* HouseBathsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseBathsTableViewCell.swift; sourceTree = "<group>"; };
 		6E3393F0207FC3E4003951DA /* HouseRatingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseRatingTableViewCell.swift; sourceTree = "<group>"; };
+		6E3D222B209120FC006986A6 /* PropertiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesViewController.swift; sourceTree = "<group>"; };
 		6E4290AC2077EC7000DC2AF3 /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 		6E49B52B208CAC5D009AFF46 /* Transportation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transportation.swift; sourceTree = "<group>"; };
 		6E5653BD2090EABA0000DAA6 /* SummaryHouseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryHouseTableViewCell.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				6E89180A20754C4E007BE443 /* MenuViewController.swift */,
 				6E89180220754C2F007BE443 /* HouseMapViewController.swift */,
 				6E5BA23B207D2E3400C99CA8 /* HouseViewController.swift */,
+				6E3D222B209120FC006986A6 /* PropertiesViewController.swift */,
 				6E89180320754C2F007BE443 /* SummaryViewController.swift */,
 				6E89180420754C2F007BE443 /* SupermarketViewController.swift */,
 				6E89180520754C2F007BE443 /* TransportationViewController.swift */,
@@ -337,6 +340,7 @@
 				6E89180920754C2F007BE443 /* TransportationViewController.swift in Sources */,
 				6E89180820754C2F007BE443 /* SupermarketViewController.swift in Sources */,
 				6E4290AD2077EC7000DC2AF3 /* House.swift in Sources */,
+				6E3D222C209120FC006986A6 /* PropertiesViewController.swift in Sources */,
 				6EF8DDBF208A49B500352D77 /* Extension+UIViewController.swift in Sources */,
 				6E3393EB207FC280003951DA /* HouseNameTableViewCell.swift in Sources */,
 				6E195B1F208923A700C07F9C /* TransportationTableViewCell.swift in Sources */,

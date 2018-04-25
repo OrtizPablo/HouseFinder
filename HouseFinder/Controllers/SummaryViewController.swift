@@ -24,6 +24,7 @@ class SummaryViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.summaryTableView.dataSource = self
         //Navigation Bar
         navigationItem.title = "Summary"
+        summaryTableView.tableFooterView = UIView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -96,6 +97,10 @@ class SummaryViewController: UIViewController, UITableViewDelegate, UITableViewD
         else {
             return 44.0
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.summaryTableView.deselectRow(at: indexPath, animated: true)
     }
 
 }
