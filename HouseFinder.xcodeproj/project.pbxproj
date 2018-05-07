@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38EA62CC5626B698DF724B57 /* Pods_HouseFinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52A417A17117FD6CD6C90AB /* Pods_HouseFinderTests.framework */; };
 		6E195B1F208923A700C07F9C /* TransportationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E195B1E208923A700C07F9C /* TransportationTableViewCell.swift */; };
 		6E3393E9207FBD7E003951DA /* HouseLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3393E8207FBD7E003951DA /* HouseLocationTableViewCell.swift */; };
 		6E3393EB207FC280003951DA /* HouseNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3393EA207FC280003951DA /* HouseNameTableViewCell.swift */; };
@@ -35,6 +36,7 @@
 		6E89180B20754C4E007BE443 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E89180A20754C4E007BE443 /* MenuViewController.swift */; };
 		6EF8DDBF208A49B500352D77 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF8DDBE208A49B500352D77 /* Extension+UIViewController.swift */; };
 		6EFE8837207E704A00BD725F /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFE8836207E704A00BD725F /* Helper.swift */; };
+		B60F78B4B583D46AF75524AB /* Pods_HouseFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1107C78E713C9724F316A3 /* Pods_HouseFinder.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E1107C78E713C9724F316A3 /* Pods_HouseFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HouseFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E195B1E208923A700C07F9C /* TransportationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportationTableViewCell.swift; sourceTree = "<group>"; };
 		6E3393E8207FBD7E003951DA /* HouseLocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseLocationTableViewCell.swift; sourceTree = "<group>"; };
 		6E3393EA207FC280003951DA /* HouseNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseNameTableViewCell.swift; sourceTree = "<group>"; };
@@ -80,6 +83,11 @@
 		6E89180A20754C4E007BE443 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		6EF8DDBE208A49B500352D77 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		6EFE8836207E704A00BD725F /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		94FF82A5EEF535D34936EB64 /* Pods-HouseFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HouseFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-HouseFinder/Pods-HouseFinder.release.xcconfig"; sourceTree = "<group>"; };
+		A52A417A17117FD6CD6C90AB /* Pods_HouseFinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HouseFinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D748695A39A10CAEA0B99A27 /* Pods-HouseFinderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HouseFinderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HouseFinderTests/Pods-HouseFinderTests.release.xcconfig"; sourceTree = "<group>"; };
+		E143E228184E6BA647A258DB /* Pods-HouseFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HouseFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HouseFinder/Pods-HouseFinder.debug.xcconfig"; sourceTree = "<group>"; };
+		F6E80D8322F8D72EB60EF133 /* Pods-HouseFinderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HouseFinderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HouseFinderTests/Pods-HouseFinderTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B60F78B4B583D46AF75524AB /* Pods_HouseFinder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,12 +103,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38EA62CC5626B698DF724B57 /* Pods_HouseFinderTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		632E46CC823B65EADA1EA695 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E143E228184E6BA647A258DB /* Pods-HouseFinder.debug.xcconfig */,
+				94FF82A5EEF535D34936EB64 /* Pods-HouseFinder.release.xcconfig */,
+				F6E80D8322F8D72EB60EF133 /* Pods-HouseFinderTests.debug.xcconfig */,
+				D748695A39A10CAEA0B99A27 /* Pods-HouseFinderTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6E3393F2207FC406003951DA /* House */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +165,8 @@
 				6E8917DA20754B99007BE443 /* HouseFinder */,
 				6E8917F220754B9B007BE443 /* HouseFinderTests */,
 				6E8917D920754B99007BE443 /* Products */,
+				632E46CC823B65EADA1EA695 /* Pods */,
+				78409C643F950D0D823EBE45 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -234,6 +257,15 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		78409C643F950D0D823EBE45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4E1107C78E713C9724F316A3 /* Pods_HouseFinder.framework */,
+				A52A417A17117FD6CD6C90AB /* Pods_HouseFinderTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -241,9 +273,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E8917F820754B9B007BE443 /* Build configuration list for PBXNativeTarget "HouseFinder" */;
 			buildPhases = (
+				212C8A804E1AFFA64068A76B /* [CP] Check Pods Manifest.lock */,
 				6E8917D420754B99007BE443 /* Sources */,
 				6E8917D520754B99007BE443 /* Frameworks */,
 				6E8917D620754B99007BE443 /* Resources */,
+				8647F3B90E9DEEE17173506B /* [CP] Embed Pods Frameworks */,
+				1AD74632A79F7804A3C878F3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -258,9 +293,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E8917FB20754B9B007BE443 /* Build configuration list for PBXNativeTarget "HouseFinderTests" */;
 			buildPhases = (
+				593A6D869C127363A45F3F31 /* [CP] Check Pods Manifest.lock */,
 				6E8917EB20754B9B007BE443 /* Sources */,
 				6E8917EC20754B9B007BE443 /* Frameworks */,
 				6E8917ED20754B9B007BE443 /* Resources */,
+				8C90C78F83285C2C8993E584 /* [CP] Embed Pods Frameworks */,
+				3B87D287C3E94E9B00E5E8B1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -329,6 +367,115 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1AD74632A79F7804A3C878F3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HouseFinder/Pods-HouseFinder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		212C8A804E1AFFA64068A76B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HouseFinder-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B87D287C3E94E9B00E5E8B1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HouseFinderTests/Pods-HouseFinderTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		593A6D869C127363A45F3F31 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HouseFinderTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8647F3B90E9DEEE17173506B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HouseFinder/Pods-HouseFinder-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HouseFinder/Pods-HouseFinder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C90C78F83285C2C8993E584 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HouseFinderTests/Pods-HouseFinderTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HouseFinderTests/Pods-HouseFinderTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6E8917D420754B99007BE443 /* Sources */ = {
@@ -516,15 +663,14 @@
 		};
 		6E8917F920754B9B007BE443 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E143E228184E6BA647A258DB /* Pods-HouseFinder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 49SA3PV5N8;
 				INFOPLIST_FILE = HouseFinder/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pablo.HouseFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -534,15 +680,14 @@
 		};
 		6E8917FA20754B9B007BE443 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94FF82A5EEF535D34936EB64 /* Pods-HouseFinder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 49SA3PV5N8;
 				INFOPLIST_FILE = HouseFinder/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pablo.HouseFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -552,17 +697,14 @@
 		};
 		6E8917FC20754B9B007BE443 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6E80D8322F8D72EB60EF133 /* Pods-HouseFinderTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 49SA3PV5N8;
 				INFOPLIST_FILE = HouseFinderTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pablo.HouseFinderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -573,17 +715,14 @@
 		};
 		6E8917FD20754B9B007BE443 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D748695A39A10CAEA0B99A27 /* Pods-HouseFinderTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 49SA3PV5N8;
 				INFOPLIST_FILE = HouseFinderTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pablo.HouseFinderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

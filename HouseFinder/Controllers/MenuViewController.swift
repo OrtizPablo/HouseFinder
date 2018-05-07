@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
