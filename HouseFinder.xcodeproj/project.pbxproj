@@ -37,6 +37,7 @@
 		6EF8DDBF208A49B500352D77 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF8DDBE208A49B500352D77 /* Extension+UIViewController.swift */; };
 		6EFE8837207E704A00BD725F /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFE8836207E704A00BD725F /* Helper.swift */; };
 		B60F78B4B583D46AF75524AB /* Pods_HouseFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1107C78E713C9724F316A3 /* Pods_HouseFinder.framework */; };
+		F6EEBFBE20A191E200B49110 /* HouseJobMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EEBFBD20A191E200B49110 /* HouseJobMapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		D748695A39A10CAEA0B99A27 /* Pods-HouseFinderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HouseFinderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HouseFinderTests/Pods-HouseFinderTests.release.xcconfig"; sourceTree = "<group>"; };
 		E143E228184E6BA647A258DB /* Pods-HouseFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HouseFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HouseFinder/Pods-HouseFinder.debug.xcconfig"; sourceTree = "<group>"; };
 		F6E80D8322F8D72EB60EF133 /* Pods-HouseFinderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HouseFinderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HouseFinderTests/Pods-HouseFinderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F6EEBFBD20A191E200B49110 /* HouseJobMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseJobMapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				6E89180A20754C4E007BE443 /* MenuViewController.swift */,
+				F6EEBFBD20A191E200B49110 /* HouseJobMapViewController.swift */,
 				6E89180220754C2F007BE443 /* HouseMapViewController.swift */,
 				6E5BA23B207D2E3400C99CA8 /* HouseViewController.swift */,
 				6E3D222B209120FC006986A6 /* PropertiesViewController.swift */,
@@ -492,6 +495,7 @@
 				6E3393EB207FC280003951DA /* HouseNameTableViewCell.swift in Sources */,
 				6E195B1F208923A700C07F9C /* TransportationTableViewCell.swift in Sources */,
 				6E8917E420754B99007BE443 /* HouseFinder.xcdatamodeld in Sources */,
+				F6EEBFBE20A191E200B49110 /* HouseJobMapViewController.swift in Sources */,
 				6E5BA23C207D2E3400C99CA8 /* HouseViewController.swift in Sources */,
 				6E49B52C208CAC5D009AFF46 /* Transportation.swift in Sources */,
 				6E89180B20754C4E007BE443 /* MenuViewController.swift in Sources */,
@@ -667,10 +671,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 49SA3PV5N8;
+				DEVELOPMENT_TEAM = DXKN9UUK5Q;
 				INFOPLIST_FILE = HouseFinder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pablo.HouseFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -684,10 +691,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 49SA3PV5N8;
+				DEVELOPMENT_TEAM = DXKN9UUK5Q;
 				INFOPLIST_FILE = HouseFinder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pablo.HouseFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -704,7 +714,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 49SA3PV5N8;
 				INFOPLIST_FILE = HouseFinderTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pablo.HouseFinderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -722,7 +736,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 49SA3PV5N8;
 				INFOPLIST_FILE = HouseFinderTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pablo.HouseFinderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

@@ -13,6 +13,7 @@ class HouseLocationTableViewCell: UITableViewCell {
     //MARK: Properties
     
     @IBOutlet weak var checkLocation: UIImageView!
+    @IBOutlet weak var locationLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

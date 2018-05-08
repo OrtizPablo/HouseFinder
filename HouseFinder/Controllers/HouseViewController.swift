@@ -16,8 +16,9 @@ class HouseViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var tableView: UITableView!
     
-    let cells = ["NameCell", "RoomsCell", "BathsCell", "RatingCell", "LocationCell"]
+    let cells = ["NameCell", "RoomsCell", "BathsCell", "RatingCell", "HouseLocationCell", "JobLocationCell"]
     var checkLocation = false
+    var checkJobLocation = false
     
     // House properties
     var latitude = CLLocationDegrees()
@@ -71,8 +72,21 @@ class HouseViewController: UIViewController, UITableViewDelegate, UITableViewDat
             cell.ratingSlider.value = Float(house.rating)
             return cell
         }
+        if indexPath.row == 4 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: cells[4], for: indexPath) as! HouseLocationTableViewCell
+            cell.locationLabel.text = "House Location"
+            // If the location has been inserted
+            if house.selected || checkLocation {
+                cell.checkLocation.image = UIImage(named: "TicIcon")
+            }
+            else {
+                cell.checkLocation.image = UIImage(named: "CrossIcon")
+            }
+            return cell
+        }
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: cells[4], for: indexPath) as! HouseLocationTableViewCell
+            cell.locationLabel.text = "Job Location"
             // If the location has been inserted
             if house.selected || checkLocation {
                 cell.checkLocation.image = UIImage(named: "TicIcon")
@@ -88,6 +102,9 @@ class HouseViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 4 && (self.tableView.cellForRow(at: indexPath)?.isSelected)! {
             performSegue(withIdentifier: "MapSegue", sender: nil)
+        }
+        else if indexPath.row == 5 && (self.tableView.cellForRow(at: indexPath)?.isSelected)! {
+            performSegue(withIdentifier: "JobMapSegue", sender: nil)
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -139,6 +156,16 @@ class HouseViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 annotation.coordinate.latitude = latitude
                 annotation.coordinate.longitude = longitude
                 houseMapViewController.annotation = annotation
+            }
+        }
+        if segue.identifier == "JobMapSegue" {
+            let houseJobMapViewController = segue.destination as! HouseJobMapViewController
+            if house.selected || checkLocation {
+                houseJobMapViewController.locationChecker = true
+                let annotation = MKPointAnnotation()
+                annotation.coordinate.latitude = latitude
+                annotation.coordinate.longitude = longitude
+                houseJobMapViewController.annotation = annotation
             }
         }
     }

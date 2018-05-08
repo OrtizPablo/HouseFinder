@@ -597,7 +597,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="KDd-Cd-4MY"/>
                                 </constraints>
-                                <state key="normal" title="Add Location">
+                                <state key="normal" title="Add House Location">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -625,7 +625,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tXA-Jm-Bzv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Ru8-c6-Il8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3500" y="-851"/>
+            <point key="canvasLocation" x="3503" y="-1640"/>
         </scene>
         <!--House View Controller-->
         <scene sceneID="Tm4-Fg-quA">
@@ -788,15 +788,15 @@
                                             <outlet property="ratingSlider" destination="BEQ-9j-XK2" id="WEC-X9-8ed"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationCell" id="A0v-of-sch" customClass="HouseLocationTableViewCell" customModule="HouseFinder" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HouseLocationCell" id="A0v-of-sch" customClass="HouseLocationTableViewCell" customModule="HouseFinder" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="204" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A0v-of-sch" id="PCx-Sp-bit">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92n-O3-vIK">
-                                                    <rect key="frame" x="57" y="11" width="245" height="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="House Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92n-O3-vIK">
+                                                    <rect key="frame" x="65" y="11" width="229" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -814,7 +814,33 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="checkLocation" destination="W3e-kf-UDc" id="KQY-bN-Ik1"/>
+                                            <outlet property="locationLabel" destination="92n-O3-vIK" id="KDN-m0-FMZ"/>
                                         </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="JobLocationCell" id="MdR-di-jDH" customClass="HouseLocationTableViewCell" customModule="HouseFinder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="248" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MdR-di-jDH" id="SLs-Ny-ejv">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LocationIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Hiw-ap-DYZ">
+                                                    <rect key="frame" x="16" y="0.0" width="41" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iZO-Yj-nwx">
+                                                    <rect key="frame" x="302" y="0.0" width="57" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Job Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9a-0D-chR">
+                                                    <rect key="frame" x="65" y="11" width="229" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -835,12 +861,55 @@
                         <outlet property="tableView" destination="Day-LY-rQG" id="kpD-H6-NDH"/>
                         <segue destination="maY-9e-QmV" kind="unwind" identifier="addHouseUnwindSegue" unwindAction="addHouseUnwindSegue:" id="NXt-7V-wHF"/>
                         <segue destination="K8U-7c-nep" kind="show" identifier="MapSegue" id="6j3-Di-hkv"/>
+                        <segue destination="8ns-Pz-3wP" kind="show" identifier="JobMapSegue" id="D2q-hv-sTZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iD5-US-Hbx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="maY-9e-QmV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2563.5" y="-851.5"/>
+            <point key="canvasLocation" x="2624.8000000000002" y="-1245.4272863568217"/>
+        </scene>
+        <!--House Job Map View Controller-->
+        <scene sceneID="qaU-KM-1q2">
+            <objects>
+                <viewController id="8ns-Pz-3wP" customClass="HouseJobMapViewController" customModule="HouseFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OjQ-vf-lkD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="W49-zV-bSH">
+                                <rect key="frame" x="0.0" y="64" width="375" height="553"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XOb-dQ-zhy">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="5KZ-eB-N3p"/>
+                                </constraints>
+                                <state key="normal" title="Add Job Location">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XOb-dQ-zhy" firstAttribute="leading" secondItem="6I7-Gp-btZ" secondAttribute="leading" id="69B-J5-zUo"/>
+                            <constraint firstItem="XOb-dQ-zhy" firstAttribute="top" secondItem="W49-zV-bSH" secondAttribute="bottom" id="LrP-FO-gHT"/>
+                            <constraint firstItem="W49-zV-bSH" firstAttribute="leading" secondItem="6I7-Gp-btZ" secondAttribute="leading" id="RNq-AP-Thv"/>
+                            <constraint firstItem="W49-zV-bSH" firstAttribute="top" secondItem="6I7-Gp-btZ" secondAttribute="top" id="RnT-pI-SmM"/>
+                            <constraint firstItem="XOb-dQ-zhy" firstAttribute="bottom" secondItem="6I7-Gp-btZ" secondAttribute="bottom" id="abh-GF-P7x"/>
+                            <constraint firstItem="XOb-dQ-zhy" firstAttribute="trailing" secondItem="6I7-Gp-btZ" secondAttribute="trailing" id="e7l-xL-zQf"/>
+                            <constraint firstItem="W49-zV-bSH" firstAttribute="trailing" secondItem="6I7-Gp-btZ" secondAttribute="trailing" id="i1k-i9-xIH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6I7-Gp-btZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="W49-zV-bSH" id="rKl-sp-CEV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4uE-EP-Mb6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3501.5999999999999" y="-869.41529235382313"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KdO-oP-QMj">
