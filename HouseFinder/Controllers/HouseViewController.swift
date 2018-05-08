@@ -106,7 +106,7 @@ class HouseViewController: UIViewController, UITableViewDelegate, UITableViewDat
         else if indexPath.row == 5 && (self.tableView.cellForRow(at: indexPath)?.isSelected)! {
             performSegue(withIdentifier: "JobMapSegue", sender: nil)
         }
-        //tableView.deselectRow(at: indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     //MARK: Actions
