@@ -510,8 +510,16 @@
                                             <outlet property="roomsLabel" destination="1FR-xo-IKP" id="lol-YC-QQF"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="transportationCell" id="zoe-BO-Hxb" customClass="SummaryTransportationTableViewCell" customModule="HouseFinder" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="jobCell" id="bDn-Mp-a1h">
                                         <rect key="frame" x="0.0" y="178" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bDn-Mp-a1h" id="CLw-Wp-DvO">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="transportationCell" id="zoe-BO-Hxb" customClass="SummaryTransportationTableViewCell" customModule="HouseFinder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="222" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zoe-BO-Hxb" id="Si1-no-lQR">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -535,7 +543,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="supermarketCell" id="5sy-rl-qi4" customClass="SummarySupermarketTableViewCell" customModule="HouseFinder" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="222" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="266" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5sy-rl-qi4" id="pgv-WL-LxI">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -573,11 +581,51 @@
                     </view>
                     <connections>
                         <outlet property="summaryTableView" destination="AxM-tu-xBW" id="kKq-YG-NNf"/>
+                        <segue destination="DIl-Fy-b7h" kind="show" identifier="routesSegue" id="qtq-3F-cLH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IvJ-ZP-Bri" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2564" y="1342.5787106446778"/>
+        </scene>
+        <!--Routes View Controller-->
+        <scene sceneID="hp2-Zn-DTI">
+            <objects>
+                <viewController id="DIl-Fy-b7h" customClass="RoutesViewController" customModule="HouseFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HJq-f8-Y83">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VKC-0D-3On">
+                                <rect key="frame" x="0.0" y="64" width="375" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="taf-5x-y75">
+                                <rect key="frame" x="0.0" y="92" width="375" height="575"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="taf-5x-y75" firstAttribute="bottom" secondItem="Xzf-Ke-CEP" secondAttribute="bottom" id="6Jp-RU-4D6"/>
+                            <constraint firstItem="VKC-0D-3On" firstAttribute="trailing" secondItem="Xzf-Ke-CEP" secondAttribute="trailing" id="BEb-UZ-Lxm"/>
+                            <constraint firstItem="taf-5x-y75" firstAttribute="trailing" secondItem="Xzf-Ke-CEP" secondAttribute="trailing" id="BGc-Zg-YAv"/>
+                            <constraint firstItem="VKC-0D-3On" firstAttribute="top" secondItem="Xzf-Ke-CEP" secondAttribute="top" id="Cfi-XE-fr6"/>
+                            <constraint firstItem="VKC-0D-3On" firstAttribute="leading" secondItem="Xzf-Ke-CEP" secondAttribute="leading" id="jNf-99-8bv"/>
+                            <constraint firstItem="taf-5x-y75" firstAttribute="top" secondItem="VKC-0D-3On" secondAttribute="bottom" id="jQS-Ce-5E7"/>
+                            <constraint firstItem="taf-5x-y75" firstAttribute="leading" secondItem="Xzf-Ke-CEP" secondAttribute="leading" id="wU2-n6-H8g"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Xzf-Ke-CEP"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="taf-5x-y75" id="bkZ-LO-aPq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XaV-xy-D9T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3501.5999999999999" y="1342.5787106446778"/>
         </scene>
         <!--House Map View Controller-->
         <scene sceneID="1c4-pO-A8o">
@@ -693,7 +741,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="40" translatesAutoresizingMaskIntoConstraints="NO" id="jcG-yx-NFx">
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="40" translatesAutoresizingMaskIntoConstraints="NO" id="jcG-yx-NFx">
                                                     <rect key="frame" x="140" y="7.5" width="94" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -702,7 +750,7 @@
                                                         <action selector="addRoom:" destination="Xal-WK-ak7" eventType="valueChanged" id="Lpc-j0-nlr"/>
                                                     </connections>
                                                 </stepper>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlp-EK-jza">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlp-EK-jza">
                                                     <rect key="frame" x="320" y="12" width="40" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -730,14 +778,14 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIo-RH-Tv9">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIo-RH-Tv9">
                                                     <rect key="frame" x="320" y="11" width="40" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="5hb-nj-tzb">
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="5hb-nj-tzb">
                                                     <rect key="frame" x="140" y="6" width="94" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -889,6 +937,9 @@
                                 <state key="normal" title="Add Job Location">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="addJobLocation:" destination="8ns-Pz-3wP" eventType="touchUpInside" id="EiP-4G-FOr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -905,9 +956,11 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="W49-zV-bSH" id="rKl-sp-CEV"/>
+                        <segue destination="PEP-j5-8RW" kind="unwind" identifier="addJobLocationUnwindSegue" unwindAction="addJobLocationUnwindSegue:" id="eJx-iH-N8u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4uE-EP-Mb6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="PEP-j5-8RW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3501.5999999999999" y="-869.41529235382313"/>
         </scene>

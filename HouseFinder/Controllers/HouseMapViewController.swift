@@ -111,7 +111,8 @@ class HouseMapViewController: UIViewController, MKMapViewDelegate {
                                 self.annotation.title = self.annotation.title! + " " + subThoroughfare
                             }
                         }
-                    } else {
+                    }
+                    else {
                         print("No Matching Addresses Found")
                     }
                 }

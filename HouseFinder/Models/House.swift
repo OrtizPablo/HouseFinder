@@ -35,8 +35,8 @@ class House {
     
     init(){
         self.name = ""
-        self.roomsNumber = 0
-        self.bathsNumber = 0
+        self.roomsNumber = 1
+        self.bathsNumber = 1
         self.rating = 5
         self.selected = false
         self.latitude = 0

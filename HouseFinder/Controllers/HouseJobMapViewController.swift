@@ -114,5 +114,16 @@ class HouseJobMapViewController: UIViewController, MKMapViewDelegate {
     @IBAction func doubleTapped(_ recognizer: UITapGestureRecognizer){
         print("doubleTapped")
     }
-
+    
+    @IBAction func addJobLocation(_ sender: UIButton) {
+        // If there is no annotation
+        if mapView.annotations.count == 0 {
+            self.showOkAlertView("Error", message: "You need to add an annotation")
+        }
+            // If there is annotation we call the unwind segue
+        else {
+            self.performSegue(withIdentifier: "addJobLocationUnwindSegue", sender: self)
+        }
+    }
+    
 }

@@ -17,13 +17,16 @@ class HouseViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var tableView: UITableView!
     
     let cells = ["NameCell", "RoomsCell", "BathsCell", "RatingCell", "HouseLocationCell", "JobLocationCell"]
-    var checkLocation = false
+    var checkHouseLocation = false
     var checkJobLocation = false
     
     // House properties
-    var latitude = CLLocationDegrees()
-    var longitude = CLLocationDegrees()
+    var houseLatitude: CLLocationDegrees = 0
+    var houseLongitude: CLLocationDegrees = 0
+    var jobLatitude: CLLocationDegrees = 0
+    var jobLongitude: CLLocationDegrees = 0
     var house = House()
+    var job = Job()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,7 +79,7 @@ class HouseViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let cell = tableView.dequeueReusableCell(withIdentifier: cells[4], for: indexPath) as! HouseLocationTableViewCell
             cell.locationLabel.text = "House Location"
             // If the location has been inserted
-            if house.selected || checkLocation {
+            if house.selected || checkHouseLocation {
                 cell.checkLocation.image = UIImage(named: "TicIcon")
             }
             else {
@@ -88,7 +91,7 @@ class HouseViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let cell = tableView.dequeueReusableCell(withIdentifier: cells[4], for: indexPath) as! HouseLocationTableViewCell
             cell.locationLabel.text = "Job Location"
             // If the location has been inserted
-            if house.selected || checkLocation {
+            if job.selected || checkJobLocation {
                 cell.checkLocation.image = UIImage(named: "TicIcon")
             }
             else {
@@ -115,12 +118,25 @@ class HouseViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBAction func addLocationUnwindSegue(_ sender: UIStoryboardSegue){
         // Getting the location of the house
         if let senderVC = sender.source as? HouseMapViewController {
-            self.latitude = senderVC.mapView.annotations[0].coordinate.latitude
-            self.longitude = senderVC.mapView.annotations[0].coordinate.longitude
-            self.checkLocation = true
+            self.houseLatitude = senderVC.mapView.annotations[0].coordinate.latitude
+            self.houseLongitude = senderVC.mapView.annotations[0].coordinate.longitude
+            self.checkHouseLocation = true
         }
         // Reloading location cell
-        let indexPath = IndexPath(row: cells.index(of: "LocationCell")!, section: 0)
+        let indexPath = IndexPath(row: cells.index(of: "HouseLocationCell")!, section: 0)
+        tableView.reloadRows(at: [indexPath], with: .none)
+    }
+    
+    // Action performed when the unwing segue is used
+    @IBAction func addJobLocationUnwindSegue(_ sender: UIStoryboardSegue){
+        // Getting the location of the house
+        if let senderVC = sender.source as? HouseJobMapViewController {
+            self.jobLatitude = senderVC.mapView.annotations[0].coordinate.latitude
+            self.jobLongitude = senderVC.mapView.annotations[0].coordinate.longitude
+            self.checkJobLocation = true
+        }
+        // Reloading location cell
+        let indexPath = IndexPath(row: cells.index(of: "JobLocationCell")!, section: 0)
         tableView.reloadRows(at: [indexPath], with: .none)
     }
     
@@ -133,8 +149,8 @@ class HouseViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let rooms = Int((tableView.dequeueReusableCell(withIdentifier: cells[1]) as! HouseRoomsTableViewCell).roomsLabel.text!)!
             let baths = Int((tableView.dequeueReusableCell(withIdentifier: cells[2]) as! HouseBathsTableViewCell).bathsLabel.text!)!
             let rating = Int((tableView.dequeueReusableCell(withIdentifier: cells[3]) as! HouseRatingTableViewCell).ratingLabel.text!)!
-            if checkLocation {
-                house = House(name: name, roomsNumber: rooms, bathsNumber: baths, rating: rating, selected: checkLocation, latitude: self.latitude, longitude: self.longitude)
+            if self.checkHouseLocation {
+                house = House(name: name, roomsNumber: rooms, bathsNumber: baths, rating: rating, selected: checkHouseLocation, latitude: self.houseLatitude, longitude: self.houseLongitude)
                 self.performSegue(withIdentifier: "addHouseUnwindSegue", sender: self)
             }
             else {
@@ -150,21 +166,21 @@ class HouseViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MapSegue" {
             let houseMapViewController = segue.destination as! HouseMapViewController
-            if house.selected || checkLocation {
+            if house.selected || self.checkHouseLocation {
                 houseMapViewController.locationChecker = true
                 let annotation = MKPointAnnotation()
-                annotation.coordinate.latitude = latitude
-                annotation.coordinate.longitude = longitude
+                annotation.coordinate.latitude = houseLatitude
+                annotation.coordinate.longitude = houseLongitude
                 houseMapViewController.annotation = annotation
             }
         }
         if segue.identifier == "JobMapSegue" {
             let houseJobMapViewController = segue.destination as! HouseJobMapViewController
-            if house.selected || checkLocation {
+            if job.selected || self.checkJobLocation {
                 houseJobMapViewController.locationChecker = true
                 let annotation = MKPointAnnotation()
-                annotation.coordinate.latitude = latitude
-                annotation.coordinate.longitude = longitude
+                annotation.coordinate.latitude = jobLatitude
+                annotation.coordinate.longitude = jobLongitude
                 houseJobMapViewController.annotation = annotation
             }
         }

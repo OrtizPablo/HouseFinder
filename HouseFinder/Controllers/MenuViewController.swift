@@ -19,6 +19,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     let cells = ["HouseCell", "TransportationCell", "SupermarketCell", "SummaryCell"]
 
     var house = House()
+    var job = Job()
     var userStops: [Transportation] = []
     var supermarkets: [Supermarket] = [Supermarket(name: "Tesco", check: false, image: UIImage(named: "tescoIcon")), Supermarket(name: "Sainsbury's", check: false, image: UIImage(named: "sainsburysIcon")), Supermarket(name: "Aldi", check: false, image: UIImage(named: "aldiIcon")), Supermarket(name: "Asda", check: false, image: UIImage(named: "asdaIcon")), Supermarket(name: "Lidl", check: false, image: UIImage(named: "lidlIcon")), Supermarket(name: "Waitrose", check: false, image: UIImage(named: "waitroseIcon")), Supermarket(name: "Others", check: false, image: UIImage(named: "othersIcon"))]
 
@@ -45,7 +46,6 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cells.count
     }
     
-    // Deselect row selected
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 && (tableView.cellForRow(at: indexPath)?.isSelected)! {
             self.performSegue(withIdentifier: "HouseSegue", sender: nil)
@@ -60,12 +60,15 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
             tableView.deselectRow(at: indexPath, animated: true)
         }
         else if indexPath.row == 3 && (tableView.cellForRow(at: indexPath)?.isSelected)! {
-            self.performSegue(withIdentifier: "SummarySegue", sender: nil)
-            tableView.deselectRow(at: indexPath, animated: true)
+            if house.selected {
+                self.performSegue(withIdentifier: "SummarySegue", sender: nil)
+                tableView.deselectRow(at: indexPath, animated: true)
+            }
+            else {
+                self.showOkAlertView("Error", message: "The house was not added")
+            }
         }
-        else {
-            tableView.deselectRow(at: indexPath, animated: true)
-        }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
     // Depending on the number of the row the function returns a different kind of cell
@@ -104,7 +107,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         if let senderVC = sender.source as? SupermarketViewController {
             self.supermarkets = senderVC.supermarkets
         }
-//        print("house: \(house.name)-\(house.roomsNumber)-\(house.bathsNumber)-\(house.rating)-\(house.latitude)-\(house.longitude)")
+//        print("house: \(house.name)-\(house.roomsNumber)-\(house.bathsNumber)-\(house.rating)-\(house.houseLatitude)-\(house.houseLongitude)-\(house.jobLatitude)-\(house.jobLongitude)")
 //        for transportation in userStops {
 //            print("Transportation: \(transportation.line) - \(transportation.stop)")
 //        }
